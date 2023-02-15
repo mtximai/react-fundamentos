@@ -3,17 +3,17 @@ import React, { cloneElement } from 'react'
 
 type myProps = {
   sobrenome: string,
-  children: []
+  children: React.ReactElement[] 
 }
 
+function Familia(props : myProps) {
 
-
-function Familia(props: myProps) {
   return (
-    <div>{props.children.map((e, i) => {
-      return cloneElement(e, { ...props, key: i })
-
-    })}</div>
+    <div>
+      {props.children.map((e, i) => {
+        return cloneElement(e, { ...props, key: i })
+      })}
+    </div>
   )
 }
 
